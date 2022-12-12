@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Masonry from '@mui/lab/Masonry';
+import { useNavigate } from "react-router-dom"
 import "./gallery.css"
 
 const all_images = [
@@ -68,6 +69,8 @@ const all_images = [
 ]
 
 export default function BasicMasonry() {
+    const navigate = useNavigate()
+
     return (
         <Box sx={{width: "100%", padding: "3em 5em"}}>
             <span style={{
@@ -88,14 +91,15 @@ export default function BasicMasonry() {
 
             <Masonry columns={4} spacing={2.5}>
                 {
-                    all_images.map((item, index) => (
+                    all_images.map((image, index) => (
                         <div key={index} className={"grid-item"} onClick={() => {
-                            console.log(item)
+                            // navigate(`/display/${image}`)
+                            navigate(`/display/${image}`)
                         }}>
                             <img
-                                src={`/images/480/${item}`}
-                                srcSet={`/images/480/${item}`}
-                                alt={item.title}
+                                src={`/images/480/${image}`}
+                                srcSet={`/images/480/${image}`}
+                                alt={image.title}
                                 loading="lazy"
                                 style={{
                                     borderBottomLeftRadius: 4,
