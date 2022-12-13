@@ -3,6 +3,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import {useSelector, useDispatch} from 'react-redux'
 import {
+    current_image_selector,
     set_previous_image,
     set_next_image
 } from "../app/store.js"
@@ -10,6 +11,7 @@ import {
 const Display = () => {
     let {selected_image_name} = useParams()
     const dispatch = useDispatch()
+    const current_image = useSelector(current_image_selector)
 
     return (
         <div style={{
@@ -26,7 +28,7 @@ const Display = () => {
             }}/>
 
             <img
-                src={`/images/1200/${selected_image_name}`}
+                src={`/images/1200/${current_image}`}
                 style={{
                     maxWidth: "100%",
                     maxHeight: "100%",

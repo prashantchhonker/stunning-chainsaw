@@ -1,13 +1,10 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import Masonry from '@mui/lab/Masonry';
 import {useSelector, useDispatch} from 'react-redux'
 import {useNavigate} from "react-router-dom"
 import {
     all_images_selector,
-    set_current_image,
-    set_previous_image,
-    set_next_image
+    set_current_image
 } from "../app/store.js"
 import "./gallery.css"
 
@@ -18,7 +15,6 @@ export default function BasicMasonry() {
 
     return (
         <Box sx={{width: "100%", padding: "3em 5em"}}>
-
             <span
                 style={{
                     fontSize: "40px",

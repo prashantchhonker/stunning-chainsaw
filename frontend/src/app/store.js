@@ -90,8 +90,10 @@ const gallery_slice = createSlice({
         },
     }
 })
+
 export const {set_current_image, set_previous_image, set_next_image} = gallery_slice.actions
 export const all_images_selector = (state) => state.gallery.images
+export const current_image_selector = (state) => state.gallery.current_image
 
 //--------------
 
