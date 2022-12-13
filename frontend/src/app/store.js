@@ -76,17 +76,21 @@ const gallery_slice = createSlice({
         set_current_image: (state, action) => {
             state.current_image = action.payload
         },
-        // set_previous_image: (state, action) => {
-        //     state.current_image = action.payload
-        // },
-        // set_next_image: (state, action) => {
-        //     state.current_image = action.payload
-        // },
+        set_previous_image: (state) => {
+            console.log('previous', state.current_image, state.images.indexOf(state.current_image))
+            if (state.images.indexOf(state.current_image) > 0) {
+                state.current_image = state.images[state.images.indexOf(state.current_image) - 1]
+            }
+        },
+        set_next_image: (state) => {
+            console.log('next', state.current_image, state.images.indexOf(state.current_image))
+            if (state.images.indexOf(state.current_image) < state.images.length - 1) {
+                state.current_image = state.images[state.images.indexOf(state.current_image) + 1]
+            }
+        },
     }
 })
-
 export const {set_current_image, set_previous_image, set_next_image} = gallery_slice.actions
-
 export const all_images_selector = (state) => state.gallery.images
 
 //--------------
@@ -99,8 +103,3 @@ export const store = configureStore({
     devTools: true,
 })
 setupListeners(store.dispatch)
-
-// transformResponse: (response, meta, arg) => {
-//     console.log(response)
-//     return response
-// },

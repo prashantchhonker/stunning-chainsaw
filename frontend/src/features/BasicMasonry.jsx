@@ -18,12 +18,18 @@ export default function BasicMasonry() {
 
     return (
         <Box sx={{width: "100%", padding: "3em 5em"}}>
-            <span style={{
-                fontSize: "40px",
-                letterSpacing: "0.2em",
-                fontFamily: '"Didot eText W01 Italic", serif',
-            }}>Julia Grant</span>
+
+            <span
+                style={{
+                    fontSize: "40px",
+                    letterSpacing: "0.2em",
+                    fontFamily: '"Didot eText W01 Italic", serif',
+                }}>
+                Julia Grant
+            </span>
+
             <hr/>
+
             <div style={{
                 marginTop: "2em",
                 fontFamily: '"Cormorant Garamond", serif',

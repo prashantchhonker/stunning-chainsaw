@@ -1,6 +1,7 @@
 import {useNavigate, useParams} from "react-router-dom"
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import {useSelector, useDispatch} from 'react-redux'
 import {
     set_previous_image,
     set_next_image
@@ -8,6 +9,7 @@ import {
 
 const Display = () => {
     let {selected_image_name} = useParams()
+    const dispatch = useDispatch()
 
     return (
         <div style={{
@@ -20,8 +22,7 @@ const Display = () => {
             cursor: "pointer",
         }}>
             <ChevronLeftIcon style={{width: '96px', height: '96px'}} onClick={() => {
-                console.log('left')
-                // set_previous_image
+                dispatch(set_previous_image())
             }}/>
 
             <img
@@ -39,8 +40,7 @@ const Display = () => {
             />
 
             <ChevronRightIcon style={{width: '96px', height: '96px'}} onClick={() => {
-                console.log('right')
-                // set_next_image
+                dispatch(set_next_image())
             }}/>
         </div>
     )
