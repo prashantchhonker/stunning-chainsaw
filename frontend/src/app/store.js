@@ -69,14 +69,23 @@ const gallery_slice = createSlice({
             "IMG_9299.JPG",
             "IMG_9300.JPG",
             "IMG_9924.PNG",
-        ]
+        ],
+        current_image: ""
     },
     reducers: {
-        // set_current_branch: (state, action) => {
-        //     state.current_branch = action.payload
+        set_current_image: (state, action) => {
+            state.current_image = action.payload
+        },
+        // set_previous_image: (state, action) => {
+        //     state.current_image = action.payload
+        // },
+        // set_next_image: (state, action) => {
+        //     state.current_image = action.payload
         // },
     }
 })
+
+export const {set_current_image, set_previous_image, set_next_image} = gallery_slice.actions
 
 export const all_images_selector = (state) => state.gallery.images
 

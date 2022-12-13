@@ -1,6 +1,10 @@
 import {useNavigate, useParams} from "react-router-dom"
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import {
+    set_previous_image,
+    set_next_image
+} from "../app/store.js"
 
 const Display = () => {
     let {selected_image_name} = useParams()
@@ -15,7 +19,11 @@ const Display = () => {
             height: "100vh",
             cursor: "pointer",
         }}>
-            <ChevronLeftIcon style={{width: '96px', height: '96px'}}/>
+            <ChevronLeftIcon style={{width: '96px', height: '96px'}} onClick={() => {
+                console.log('left')
+                // set_previous_image
+            }}/>
+
             <img
                 src={`/images/1200/${selected_image_name}`}
                 style={{
@@ -29,7 +37,11 @@ const Display = () => {
                     event.stopPropagation()
                 }}
             />
-            <ChevronRightIcon style={{width: '96px', height: '96px'}}/>
+
+            <ChevronRightIcon style={{width: '96px', height: '96px'}} onClick={() => {
+                console.log('right')
+                // set_next_image
+            }}/>
         </div>
     )
 }
