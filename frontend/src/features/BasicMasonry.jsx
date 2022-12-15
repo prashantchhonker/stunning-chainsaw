@@ -24,7 +24,7 @@ export default function BasicMasonry() {
                 Julia Grant
             </span>
 
-            <hr/>
+            <hr style={{margin: 0}}/>
 
             <div style={{
                 marginTop: "2em",

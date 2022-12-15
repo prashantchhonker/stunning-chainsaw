@@ -1,5 +1,4 @@
-import {configureStore, createEntityAdapter, createSlice, current} from "@reduxjs/toolkit"
-import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react"
+import {configureStore, createSlice} from "@reduxjs/toolkit"
 import {setupListeners} from "@reduxjs/toolkit/query"
 
 //--------------
